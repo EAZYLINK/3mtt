@@ -27,8 +27,6 @@ for (let key of keys ) {
     num1 = parseFloat(input.innerHTML);
     operator = key.id;
     clearInput();
-    } else {
-    num1 = parseFloat(input.innerHTML);
     }
     if (key.id === '=') {
         num2 = parseFloat(input.innerHTML);
@@ -38,9 +36,17 @@ for (let key of keys ) {
         if (operator === '/') result = div(num1, num2);
         if (operator === 'x') result = mul(num1, num2);
         if (operator === '') result = num1;
+        console.log(result)
+        if (result == Infinity) {
+            display.innerHTML = 'Invalid input'
+            input.innerHTML = '';
+            num1 = 0;
+            num2 = 0;
+            return
+        }
         display.innerHTML = result;
         input.innerHTML = '';
-        num1 = num2;
+        num1 = 0;
         num2 = 0;
         }
     if (key.id === 'AC') {
