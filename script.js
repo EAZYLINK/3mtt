@@ -36,7 +36,6 @@ for (let key of keys ) {
         if (operator === '/') result = div(num1, num2);
         if (operator === 'x') result = mul(num1, num2);
         if (operator === '') result = num1;
-        console.log(result)
         if (result == Infinity) {
             display.innerHTML = 'Invalid input'
             input.innerHTML = '';
