@@ -1,21 +1,19 @@
 import Fetch from "./Fetch";
 import ListComponent from './ListComponent'
+import RefinePost from "./RefinePost";
 
 function App() {
-  const {data: posts, isPending, error} = Fetch('https://jsonplaceholder.typicode.com/posts');
+  const {data: posts, isPending: postIsPending, error: postError} = Fetch('https://jsonplaceholder.typicode.com/posts');
 
-  const {data: authors} = Fetch('https://jsonplaceholder.typicode.com/users');
+  const {data: authors, isPending: authorIsPending, error: authorEror} = Fetch('https://jsonplaceholder.typicode.com/users');
 
-  posts && posts.map(post => {
-    const author = authors.find(user => user.id === post.userId
-    )
-    return post.author = author.name;
-  })
+  RefinePost(posts, authors);
 
   return (
     <div className="App">
-      {isPending && <div>Loading...</div>}
-      {error && <div>{ error }</div>}
+      {(postIsPending || authorIsPending) && <div>Loading...</div>}
+      {postError && <div>{ postError }</div>}
+      {authorEror && <div>{ authorEror }</div>}
      {posts && <ListComponent lists = {posts}/> }
     </div>
   );
