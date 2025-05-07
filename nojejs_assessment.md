@@ -27,3 +27,24 @@ Language	| JavaScript (front and back-end)	| PHP, Java, Python, etc.
 Ecosystem	| Rich npm library	| Varies (Maven, Composer, etc.)
 Real-time | Support	Built-in via WebSocket modules	| Needs extra setup (e.g., Java Spring, socket.io)
 Setup Time	| Fast and minimal	| Can be heavy with configurations
+
+## 3. Pros and Cons of Node.js
+### Pros
+- **Performance Benefits:** Efficient for I/O-heavy operations due to asynchronous architecture.
+
+- **Vast Ecosystem:** Over 1 million npm packages for rapid development.
+
+- **JavaScript Across Stack:** Developers can use the same language on client and server.
+
+- **Real-time Capabilities:** Ideal for chat apps, online gaming, live updates using WebSockets.
+
+- **Corporate & Community Support:** Maintained by a strong community and backed by companies like Google and Microsoft.
+
+### Cons
+- **CPU-Intensive Task Limitation:** Single-threaded design struggles with heavy computation.
+
+- **Callback Hell:** Deep nesting of callbacks can make code hard to read (mitigated by async/await).
+
+- **Error Handling Issues:** Asynchronous code can make it tricky to catch and handle errors consistently.
+
+- **Database Query Challenges:** Relational DB queries can be complex due to async nature and lack of mature ORMs (though tools like Prisma help).
