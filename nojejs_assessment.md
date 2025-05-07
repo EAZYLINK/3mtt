@@ -20,10 +20,10 @@ This ecosystem accelerates development and promotes reuse of reliable code.
 ## 2. Comparison Table: Node.js vs Traditional Server-side Technologies
 | Feature | Node.js |	Traditional Server-Side (e.g., PHP, Java)
 | ------- | ------- | -----------------------------------------
-Concurrency Model	Event-driven, non-blocking I/O	Thread-per-request (blocking I/O)
-Scalability	High due to event loop	Limited by thread/resources
-Performance	Great for I/O-intensive tasks	Better for CPU-intensive tasks
-Language	JavaScript (front and back-end)	PHP, Java, Python, etc.
-Ecosystem	Rich npm library	Varies (Maven, Composer, etc.)
-Real-time Support	Built-in via WebSocket modules	Needs extra setup (e.g., Java Spring, socket.io)
-Setup Time	Fast and minimal	Can be heavy with configurations
+Concurrency Model	| Event-driven, non-blocking I/O	| Thread-per-request (blocking I/O)
+Scalability	| High due to event loop	| Limited by thread/resources
+Performance	| Great for I/O-intensive | tasks	Better for CPU-intensive tasks
+Language	| JavaScript (front and back-end)	| PHP, Java, Python, etc.
+Ecosystem	| Rich npm library	| Varies (Maven, Composer, etc.)
+Real-time | Support	Built-in via WebSocket modules	| Needs extra setup (e.g., Java Spring, socket.io)
+Setup Time	| Fast and minimal	| Can be heavy with configurations
