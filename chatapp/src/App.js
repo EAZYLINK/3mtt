@@ -1,5 +1,6 @@
 import io from 'socket.io-client';
 import {useState, useEffect} from 'react';
+import ListComponent from './ListComponent';
 
 function App() {
   const [message, setMessage] = useState('');
@@ -7,12 +8,11 @@ function App() {
   const socket = io('http://localhost:8000/');
   
   useEffect(() => {
-  const socket = io('http://localhost:8000/');
     socket.on('chat message', ( msg) => {
-      console.log( msg)
       setChat(prev => [...prev,  msg]);
+      return () => socket.disconnect();
     })
-  }, [])
+  }, [socket])
 
   const sendMessage = (e) => {
     e.preventDefault();
@@ -26,7 +26,10 @@ function App() {
       <header className="App-header">
         YouChat!
       </header>
-      <form onSubmit={sendMessage}>
+       <ListComponent chat = {chat} />
+      <form onSubmit={sendMessage}
+      className='input'
+      >
         <input 
         value={message}
         placeholder='Enter message'
@@ -34,11 +37,6 @@ function App() {
         />
         <button type='submit'>Send</button>
       </form>
-      <ul>
-        {chat && chat.map((msg, key) => (
-          <li key={key}>{msg}</li>
-        ))}
-      </ul>
     </div>
   );
 }

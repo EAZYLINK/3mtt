@@ -21,6 +21,29 @@ header {
   margin-top: 20px;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+}
 li {
   list-style: none;
+}
+
+.chat {
+  text-align: left;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+.input {
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.input button {
+  border-radius: 0px 50px 50px 0px;
+  border: 1px;
 }
